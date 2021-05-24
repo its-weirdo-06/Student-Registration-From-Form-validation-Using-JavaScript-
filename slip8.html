@@ -1,0 +1,51 @@
+<DOCTYPE html>
+<html>
+<script type="text/javascript">
+function validate()
+{
+var mb=/^[7-9]\d{9}$/;
+sname=document.getElementById("nm").value;
+smobileno=document.getElementById("mb").value;
+saddress=document.getElementById("adr").value;
+scity=document.getElementById("ci").value;
+sstate=document.getElementById("sta").value;
+spin=document.getElementById("pin").value;
+if(sname==""||smobileno==""||saddress==""||scity==""||sstate==""||spin=="")
+{
+ alert("Field should not be NULL");
+}
+else if(!sname.match(/^[A-Za-z]+$/))
+{
+alert("Name should contain only characters");
+}
+else if(!(mb.test(smobileno)))
+{
+ alert("Mobile no not valid");
+}
+else if(!spin.match(/^\d{6}$/))
+
+{
+
+alert("Pin code Not valid");
+}
+
+else
+{
+ alert("form submitted");
+}
+}
+</script>
+<body>
+<form>
+<table align="center" width="300" bgcolor="snow" style="font-family:times new roman">
+<tr><th colspan=2 style="font-size:20">STUDENT REGISTRATION FORM</th></tr>
+<center><tr><td nowrap="nowrap">Name of Student</td><td><input type=text name=txtsname id=nm size=20></td></tr>
+<tr><td>Mobile No</td><td><input type=text name=txtsmobileno id=mb size=20></td></tr>
+<tr><td>Address line</td><td><input type=text name=txtsaddress id=adr size=20></td>
+<tr><td>City</td><td><input type=text name=txtscity id=ci size=20></td>
+<tr><td>State</td><td><input type=text name=txtsstate id=sta size=20></td>
+<tr><td>Pin code</td><td><input type=text name=txtspin id=pin size=20></td></tr>
+<tr><td><input type=submit value="Submit" onClick="return validate()"></td>
+<td><input type=reset value="Reset"></td></tr></center>
+</body>
+</html>
